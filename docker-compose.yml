@@ -16,8 +16,7 @@ services:
 
   backend:
     build:
-      context: ./backend2025-pizzademo
-    ports:
+      context: ./pizzademo_backend
       - "8080:8080"
     depends_on:
       - db
