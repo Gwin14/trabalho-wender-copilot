@@ -10,16 +10,18 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
-
 @Entity
 
 public class Cardapio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     private Float valor;
     private String tamanho;
+    private String nome;
+    private String descricao;
+    private Float preco;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pizza_id")
@@ -54,14 +56,37 @@ public class Cardapio {
         this.pizza = pizza;
     }
 
+    public String getNome() {
+        return nome;
+    }
 
-    public Cardapio(Float valor, String tamanho, Pizza pizza) {        
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public Float getPreco() {
+        return preco;
+    }
+
+    public void setPreco(Float preco) {
+        this.preco = preco;
+    }
+
+    public Cardapio(Float valor, String tamanho, Pizza pizza) {
         this.valor = valor;
         this.tamanho = tamanho;
         this.pizza = pizza;
     }
 
-    public Cardapio(){
+    public Cardapio() {
 
     }
 

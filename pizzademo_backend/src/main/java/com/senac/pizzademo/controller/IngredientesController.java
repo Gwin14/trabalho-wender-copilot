@@ -1,7 +1,9 @@
 package com.senac.pizzademo.controller;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,6 +15,7 @@ import com.senac.pizzademo.repository.IngredientesRepository;
 
 @RestController
 @RequestMapping("/ingredientes")
+@CrossOrigin(origins = { "http://localhost:3000", "http://backend:8080" }) // Permite frontend local e docker
 public class IngredientesController {
 
     @Autowired
